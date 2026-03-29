@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Github, Instagram, Linkedin } from "lucide-react";
 import placeholderImages from '@/lib/placeholder-images.json';
+import { Footer } from "@/components/Footer";
 
 export default function Home() {
   const profileImage = placeholderImages.profile;
@@ -115,9 +116,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="bg-foreground text-background text-center p-6">
-        <p className="text-sm">&copy; {new Date().getFullYear()} Marcelo Giulian. Desenvolvido como parte da Atividade 4 - Codifica Edu.</p>
-      </footer>
+      <Footer />
     </div>
   );
 }
