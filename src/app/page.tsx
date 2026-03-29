@@ -1,23 +1,33 @@
+
 import Image from "next/image";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Github, Instagram, Linkedin } from "lucide-react";
-import placeholderImages from '@/lib/placeholder-images.json';
-import { Footer } from "@/components/Footer";
+
+// O componente Footer foi movido para cá para simplificar
+function Footer() {
+  const year = new Date().getFullYear();
+  return (
+    <footer className="bg-foreground text-background text-center p-6">
+      <p className="text-sm">&copy; {year} Marcelo Giulian. Desenvolvido como parte da Atividade 4 - Codifica Edu.</p>
+    </footer>
+  );
+}
 
 export default function Home() {
-  const profileImage = placeholderImages.profile;
+  // A referência da imagem agora está diretamente aqui
+  const profileImageSrc = "/profile.png";
 
   return (
     <div className="flex flex-col min-h-screen">
+      {/* ===== CABEÇALHO (HEADER) ===== */}
       <header className="bg-primary text-primary-foreground text-center py-12 px-4">
         <Image
-          src={profileImage.src}
+          src={profileImageSrc}
           alt="Foto de Perfil de Marcelo Giulian"
           width={250}
           height={250}
           className="rounded-full border-4 border-white mx-auto mb-4 shadow-lg"
-          data-ai-hint={profileImage["data-ai-hint"]}
           priority
         />
         <h1 className="text-4xl md:text-5xl font-bold">Marcelo Giulian</h1>
@@ -26,6 +36,7 @@ export default function Home() {
         </p>
       </header>
 
+      {/* ===== NAVEGAÇÃO (NAV) ===== */}
       <nav className="sticky top-0 z-50 bg-foreground text-background shadow-md">
         <ul className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-10 p-4">
           <li><a href="#sobre" className="font-semibold hover:text-primary transition-colors">Sobre</a></li>
@@ -35,9 +46,11 @@ export default function Home() {
         </ul>
       </nav>
 
+      {/* ===== CONTEÚDO PRINCIPAL (MAIN) ===== */}
       <main className="container mx-auto p-4 md:p-8 flex-grow">
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="lg:flex-grow">
+            {/* --- Seção Sobre Mim --- */}
             <section id="sobre" className="mb-12 scroll-mt-20">
               <h2 className="text-3xl font-bold text-primary mb-6 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-20 after:h-1 after:bg-gradient-to-r from-primary to-secondary">
                 Sobre Mim
@@ -48,6 +61,7 @@ export default function Home() {
               </div>
             </section>
 
+            {/* --- Seção Habilidades --- */}
             <section id="habilidades" className="mb-12 scroll-mt-20">
               <h2 className="text-3xl font-bold text-primary mb-6 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-20 after:h-1 after:bg-gradient-to-r from-primary to-secondary">
                 Habilidades
@@ -63,6 +77,7 @@ export default function Home() {
               </div>
             </section>
 
+            {/* --- Seção Projetos --- */}
             <section id="projetos" className="mb-12 scroll-mt-20">
                <h2 className="text-3xl font-bold text-primary mb-6 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-20 after:h-1 after:bg-gradient-to-r from-primary to-secondary">
                 Projetos de Estudo
@@ -85,6 +100,7 @@ export default function Home() {
             </section>
           </div>
 
+          {/* --- Barra Lateral (ASIDE) --- */}
           <aside className="lg:w-1/3 lg:sticky top-20 self-start">
             <Card className="shadow-lg">
               <CardHeader>
@@ -106,6 +122,7 @@ export default function Home() {
         </div>
       </main>
       
+      {/* ===== Seção Contato ===== */}
       <section id="contato" className="bg-card w-full scroll-mt-20">
         <div className="container mx-auto text-center py-12 px-4">
             <h2 className="text-3xl font-bold text-primary mb-4">Entre em Contato</h2>
@@ -116,6 +133,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ===== RODAPÉ (FOOTER) ===== */}
       <Footer />
     </div>
   );
