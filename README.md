@@ -1,32 +1,26 @@
-# IdeaSpark
+# Página de Perfil Pessoal com Next.js e Tailwind CSS
 
-Welcome to IdeaSpark! This application is designed to help you break through creative blocks by generating unique prompts for writing, art, or daily inspiration.
+Este projeto é uma versão modernizada da página de perfil pessoal, reconstruída com Next.js, React, Tailwind CSS e ShadCN UI.
 
-## ✨ Features
+## ✨ Tecnologias Aplicadas
 
-- **AI-Powered Prompts**: Leverages AI to generate creative and unique prompts.
-- **Theme Selection**: Customize your prompts by selecting themes like 'Writing', 'Art', or 'Daily Challenge'.
-- **Save for Later**: Keep your favorite prompts in a dedicated 'Saved Prompts' section.
-- **Share Your Ideas**: Easily share interesting prompts with friends or on social media.
-- **Clean, Modern UI**: A serene and focused interface designed to inspire creativity.
+- **Next.js (App Router)**
+- **React**
+- **TypeScript**
+- **Tailwind CSS**
+- **ShadCN UI** para componentes de interface.
+- **Lucide Icons** para iconografia.
 
-## 🚀 Getting Started
+## 🚀 Como Executar o Projeto
 
-1.  **Install dependencies**:
-    ```bash
-    npm install
-    ```
-2.  **Run the development server**:
-    ```bash
-    npm run dev
-    ```
+1. **Instale as dependências:**
+   ```bash
+   npm install
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Rode o servidor de desenvolvimento:**
+   ```bash
+   npm run dev
+   ```
 
-## 🛠️ Built With
-
-- [Next.js](https://nextjs.org/) - React Framework
-- [Tailwind CSS](https://tailwindcss.com/) - CSS Framework
-- [Shadcn/ui](https://ui.shadcn.com/) - Component Library
-- [Lucide React](https://lucide.dev/) - Icons
-- [Genkit](https://firebase.google.com/docs/genkit) - AI Framework
+3. Abra [http://localhost:3000](http://localhost:3000) no seu navegador para ver o resultado.

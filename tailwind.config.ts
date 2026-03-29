@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss"
-import { fontFamily } from "tailwindcss/defaultTheme"
 
 const config = {
   darkMode: ["class"],
@@ -19,10 +18,6 @@ const config = {
       },
     },
     extend: {
-      fontFamily: {
-        body: ["Inter", ...fontFamily.sans],
-        headline: ["Inter", ...fontFamily.sans],
-      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
