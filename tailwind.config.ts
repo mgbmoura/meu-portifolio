@@ -9,13 +9,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        primaria: "#F7A072",
-        secundaria: "#F2E2D2",
-        fundo: "#222725",
-        card: "#2D3431",
-        "texto-principal": "#F2E2D2",
-        "primaria-texto": "#222725",
-        "debug-red": "#ff0000",
+        primaria: "hsl(var(--primaria))",
+        "primaria-texto": "hsl(var(--primaria-texto))",
+        secundaria: "hsl(var(--secundaria))",
+        fundo: "hsl(var(--fundo))",
+        card: "hsl(var(--card))",
+        "texto-principal": "hsl(var(--texto-principal))",
       },
     },
   },
