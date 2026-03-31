@@ -1,107 +1,143 @@
-import type { Metadata } from "next";
-import Image from "next/image";
+import Image from 'next/image';
+import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: "Seu Nome - Desenvolvedor Web",
-  description: "Portfólio de um desenvolvedor web apaixonado por tecnologia.",
+  title: 'Marcelo Giulian - Desenvolvedor',
+  description: 'Portfólio de um desenvolvedor apaixonado por tecnologia.',
 };
 
-export default function Home() {
+export default function HomePage() {
   const skills = [
-    'HTML', 'CSS', 'JavaScript', 'TypeScript', 'React',
-    'Next.js', 'Node.js', 'Python', 'SQL', 'Git'
+    'HTML5 & CSS3',
+    'JavaScript (ES6+)',
+    'React & Node.js',
+    'SQL & NoSQL',
+    'Git & GitHub',
+    'APIs RESTful',
   ];
 
   const projects = [
     {
-      title: 'Projeto 1',
-      description: 'Descrição breve do projeto. Tecnologias usadas, desafios superados, etc.',
-      link: '#'
-    },
-    {
-      title: 'Projeto 2',
-      description: 'Descrição breve do projeto. Tecnologias usadas, desafios superados, etc.',
-      link: '#'
+      title: 'Página de Perfil Pessoal',
+      description: 'Criação desta página de perfil semântica e responsiva, utilizando Next.js, Tailwind CSS e boas práticas.',
+      link: 'https://github.com/mgbmoura',
     },
   ];
 
   return (
     <>
-      {/* Cabeçalho e Navegação */}
-      <header className="w-full sticky top-0 bg-fundo bg-opacity-90 backdrop-blur-sm z-10 py-4 shadow-md">
-        <div className="container mx-auto px-4">
-          <nav className="flex justify-center space-x-8 md:space-x-12">
-            <a href="#sobre" className="hover:text-primaria transition-colors">Sobre</a>
-            <a href="#habilidades" className="hover:text-primaria transition-colors">Habilidades</a>
-            <a href="#projetos" className="hover:text-primaria transition-colors">Projetos</a>
-            <a href="#contato" className="hover:text-primaria transition-colors">Contato</a>
-          </nav>
-        </div>
+      {/* Header */}
+      <header className="bg-primaria text-primaria-texto text-center py-12 px-4">
+        <Image
+          src="/profile.png"
+          alt="Foto de Perfil de Marcelo Giulian"
+          width={150}
+          height={150}
+          className="rounded-full border-4 border-secundaria mx-auto mb-4 shadow-lg"
+          priority
+        />
+        <h1 className="text-4xl md:text-5xl font-bold">Marcelo Giulian</h1>
+        <p className="text-lg opacity-90 mt-1">
+          Desenvolvedor Full-Stack | O que não te desafia, não te transforma
+        </p>
       </header>
-      
-      <main className="container mx-auto px-4 py-12 md:py-20 space-y-16 md:space-y-24">
 
-        {/* Seção Sobre */}
-        <section id="sobre" className="text-center scroll-mt-20">
-          <Image
-            src="/profile.png"
-            alt="Foto de Perfil"
-            width={192}
-            height={192}
-            className="w-48 h-48 mx-auto mb-6 rounded-full shadow-lg md:w-56 md:h-56 object-cover"
-            priority
-          />
-          <h1 className="text-4xl font-bold text-texto-principal mb-2 md:text-5xl">Seu Nome</h1>
-          <p className="text-lg text-texto-principal mb-8 md:text-xl">Desenvolvedor Web Full-Stack</p>
-        </section>
+      {/* Navigation */}
+      <nav className="sticky top-0 z-50 bg-card text-texto-principal shadow-md">
+        <ul className="flex justify-center items-center gap-4 sm:gap-10 p-4">
+          <li><a href="#sobre" className="font-semibold hover:text-primaria transition-colors">Sobre</a></li>
+          <li><a href="#habilidades" className="font-semibold hover:text-primaria transition-colors">Habilidades</a></li>
+          <li><a href="#projetos" className="font-semibold hover:text-primaria transition-colors">Projetos</a></li>
+          <li><a href="#contato" className="font-semibold hover:text-primaria transition-colors">Contato</a></li>
+        </ul>
+      </nav>
 
-        {/* Seção de Habilidades */}
-        <section id="habilidades" className="scroll-mt-20">
-          <h2 className="text-3xl font-bold text-primaria mb-8 text-center">Minhas Habilidades</h2>
-          <div className="flex flex-wrap justify-center gap-4 max-w-2xl mx-auto">
-            {skills.map((skill) => (
-              <div key={skill} className="bg-card p-4 rounded-lg shadow-md font-medium">
-                {skill}
+      {/* Main Content */}
+      <main className="container mx-auto p-4 md:p-8 flex-grow">
+        <div className="flex flex-col lg:flex-row gap-8">
+          
+          {/* Main column */}
+          <div className="lg:flex-grow">
+            <section id="sobre" className="mb-12 scroll-mt-20">
+              <h2 className="text-3xl font-bold text-primaria mb-6 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-20 after:h-1 after:bg-gradient-to-r from-primaria to-secundaria">
+                Sobre Mim
+              </h2>
+              <div className="space-y-4 text-lg leading-relaxed text-texto-principal">
+                <p>
+                  Sou um desenvolvedor em formação, apaixonado por tecnologia e sempre curioso para entender como as coisas funcionam por trás das telas. Estou em constante aprendizado, buscando evoluir a cada desafio, projeto e linha de código escrita.
+                </p>
+                <p>
+                  Mesmo sem uma experiência sólida ainda, tenho uma grande vontade de crescer na área e me aprimorar nas boas práticas do desenvolvimento web — tanto no front-end quanto no back-end. Acredito que com dedicação, consistência e humildade para aprender, posso construir soluções cada vez melhores e mais úteis para o mundo real.
+                </p>
               </div>
-            ))}
-          </div>
-        </section>
+            </section>
 
-        {/* Seção de Projetos */}
-        <section id="projetos" className="scroll-mt-20">
-          <h2 className="text-3xl font-bold text-primaria mb-8 text-center">Meus Projetos</h2>
-          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {projects.map((project) => (
-              <div key={project.title} className="bg-card p-6 rounded-lg shadow-md flex flex-col">
-                <h3 className="text-xl font-bold mb-2 text-primaria">{project.title}</h3>
-                <p className="text-texto-principal flex-grow mb-4">{project.description}</p>
-                <a href={project.link} target="_blank" rel="noopener noreferrer" className="self-start font-semibold text-primaria hover:underline">
-                  Ver Projeto &rarr;
+            <section id="habilidades" className="mb-12 scroll-mt-20">
+              <h2 className="text-3xl font-bold text-primaria mb-6 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-20 after:h-1 after:bg-gradient-to-r from-primaria to-secundaria">
+                Habilidades
+              </h2>
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+                {skills.map((skill) => (
+                  <div key={skill} className="rounded-lg border border-primaria bg-card text-texto-principal p-4 flex items-center justify-center hover:transform hover:-translate-y-1 transition-transform duration-300 shadow-md hover:shadow-xl">
+                    <p className="text-center font-semibold">{skill}</p>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            <section id="projetos" className="mb-12 scroll-mt-20">
+              <h2 className="text-3xl font-bold text-primaria mb-6 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-20 after:h-1 after:bg-gradient-to-r from-primaria to-secundaria">
+                Projetos de Estudo
+              </h2>
+              <div className="grid md:grid-cols-1 gap-6">
+                {projects.map((project) => (
+                  <div key={project.title} className="rounded-lg border border-primaria bg-card text-texto-principal shadow-sm hover:shadow-xl transition-shadow duration-300 p-6">
+                    <h3 className="text-2xl font-semibold leading-none tracking-tight text-secundaria mb-4">{project.title}</h3>
+                    <p className="mb-4">{project.description}</p>
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium bg-primaria text-primaria-texto hover:bg-primaria/90 h-10 px-4 py-2 mt-4">
+                      Ver no GitHub
+                    </a>
+                  </div>
+                ))}
+              </div>
+            </section>
+          </div>
+
+          {/* Aside column */}
+          <aside className="lg:w-1/3 lg:sticky top-20 self-start">
+            <div className="rounded-lg border border-primaria bg-card text-texto-principal shadow-lg p-6">
+              <h3 className="text-2xl font-semibold leading-none tracking-tight text-secundaria mb-4">Redes Sociais</h3>
+              <div className="flex flex-col space-y-3">
+                 <a href="https://www.linkedin.com/in/marcelo-giulian" target="_blank" rel="noopener noreferrer" className="flex items-center text-primaria font-semibold hover:underline">
+                  LinkedIn
+                </a>
+                <a href="https://github.com/mgbmoura" target="_blank" rel="noopener noreferrer" className="flex items-center text-primaria font-semibold hover:underline">
+                  GitHub
+                </a>
+                <a href="https://www.instagram.com/mrcl_moura_/" target="_blank" rel="noopener noreferrer" className="flex items-center text-primaria font-semibold hover:underline">
+                  Instagram
                 </a>
               </div>
-            ))}
-          </div>
-        </section>
-        
-        {/* Seção de Contato */}
-        <section id="contato" className="scroll-mt-20">
-          <h2 className="text-3xl font-bold text-primaria mb-8 text-center">Entre em Contato</h2>
-          <div className="bg-card p-8 rounded-lg shadow-md max-w-lg mx-auto">
-            <p className="text-center text-texto-principal mb-6">Estou aberto a novas oportunidades. Sinta-se à vontade para me contatar.</p>
-            <a 
-              href="mailto:seu-email@example.com" 
-              className="block w-full text-center bg-primaria text-primaria-texto font-bold py-3 px-6 rounded-lg transition-transform duration-300 hover:scale-105"
-            >
-              Enviar E-mail
-            </a>
-          </div>
-        </section>
+            </div>
+          </aside>
+        </div>
       </main>
 
-      {/* Rodapé */}
-      <footer className="text-center py-8 mt-12">
-        <p className="text-texto-principal">&copy; {new Date().getFullYear()} Seu Nome. Todos os direitos reservados.</p>
+      {/* Contact Section */}
+      <section id="contato" className="bg-card w-full scroll-mt-20">
+        <div className="container mx-auto text-center py-12 px-4">
+          <h2 className="text-3xl font-bold text-primaria mb-4">Entre em Contato</h2>
+          <p className="text-lg mb-6 text-texto-principal">Estou disponível para novos desafios e colaborações. Vamos conversar!</p>
+          <a href="mailto:mrclgln10@gmail.com" className="inline-flex items-center justify-center whitespace-nowrap rounded-full text-sm font-medium text-primaria-texto h-11 px-8 bg-primaria hover:bg-primaria/80 font-bold">
+            mrclgln10@gmail.com
+          </a>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="text-center p-6">
+        <p className="text-texto-principal">&copy; 2024 Marcelo Giulian. Todos os direitos reservados.</p>
       </footer>
     </>
-  )
+  );
 }
