@@ -1,140 +1,107 @@
-
+import type { Metadata } from "next";
 import Image from "next/image";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { Github, Instagram, Linkedin } from "lucide-react";
 
-// O componente Footer foi movido para cá para simplificar
-function Footer() {
-  const year = new Date().getFullYear();
-  return (
-    <footer className="bg-foreground text-background text-center p-6">
-      <p className="text-sm">&copy; {year} Marcelo Giulian. Desenvolvido como parte da Atividade 4 - Codifica Edu.</p>
-    </footer>
-  );
-}
+export const metadata: Metadata = {
+  title: "Seu Nome - Desenvolvedor Web",
+  description: "Portfólio de um desenvolvedor web apaixonado por tecnologia.",
+};
 
 export default function Home() {
-  // A referência da imagem agora está diretamente aqui
-  const profileImageSrc = "/profile.png";
+  const skills = [
+    'HTML', 'CSS', 'JavaScript', 'TypeScript', 'React',
+    'Next.js', 'Node.js', 'Python', 'SQL', 'Git'
+  ];
+
+  const projects = [
+    {
+      title: 'Projeto 1',
+      description: 'Descrição breve do projeto. Tecnologias usadas, desafios superados, etc.',
+      link: '#'
+    },
+    {
+      title: 'Projeto 2',
+      description: 'Descrição breve do projeto. Tecnologias usadas, desafios superados, etc.',
+      link: '#'
+    },
+  ];
 
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* ===== CABEÇALHO (HEADER) ===== */}
-      <header className="bg-primary text-primary-foreground text-center py-12 px-4">
-        <Image
-          src={profileImageSrc}
-          alt="Foto de Perfil de Marcelo Giulian"
-          width={250}
-          height={250}
-          className="rounded-full border-4 border-white mx-auto mb-4 shadow-lg"
-          priority
-        />
-        <h1 className="text-4xl md:text-5xl font-bold">Marcelo Giulian</h1>
-        <p className="text-lg opacity-90 mt-1">
-          Desenvolvedor Full-Stack | O que não te desafia, não te transforma
-        </p>
+    <>
+      {/* Cabeçalho e Navegação */}
+      <header className="w-full sticky top-0 bg-fundo bg-opacity-90 backdrop-blur-sm z-10 py-4 shadow-md">
+        <div className="container mx-auto px-4">
+          <nav className="flex justify-center space-x-8 md:space-x-12">
+            <a href="#sobre" className="hover:text-primaria transition-colors">Sobre</a>
+            <a href="#habilidades" className="hover:text-primaria transition-colors">Habilidades</a>
+            <a href="#projetos" className="hover:text-primaria transition-colors">Projetos</a>
+            <a href="#contato" className="hover:text-primaria transition-colors">Contato</a>
+          </nav>
+        </div>
       </header>
-
-      {/* ===== NAVEGAÇÃO (NAV) ===== */}
-      <nav className="sticky top-0 z-50 bg-foreground text-background shadow-md">
-        <ul className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-10 p-4">
-          <li><a href="#sobre" className="font-semibold hover:text-primary transition-colors">Sobre</a></li>
-          <li><a href="#habilidades" className="font-semibold hover:text-primary transition-colors">Habilidades</a></li>
-          <li><a href="#projetos" className="font-semibold hover:text-primary transition-colors">Projetos</a></li>
-          <li><a href="#contato" className="font-semibold hover:text-primary transition-colors">Contato</a></li>
-        </ul>
-      </nav>
-
-      {/* ===== CONTEÚDO PRINCIPAL (MAIN) ===== */}
-      <main className="container mx-auto p-4 md:p-8 flex-grow">
-        <div className="flex flex-col lg:flex-row gap-8">
-          <div className="lg:flex-grow">
-            {/* --- Seção Sobre Mim --- */}
-            <section id="sobre" className="mb-12 scroll-mt-20">
-              <h2 className="text-3xl font-bold text-primary mb-6 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-20 after:h-1 after:bg-gradient-to-r from-primary to-secondary">
-                Sobre Mim
-              </h2>
-              <div className="space-y-4 text-lg leading-relaxed">
-                <p>Sou um desenvolvedor em formação, apaixonado por tecnologia e sempre curioso para entender como as coisas funcionam por trás das telas. Estou em constante aprendizado, buscando evoluir a cada desafio, projeto e linha de código escrita.</p>
-                <p>Mesmo sem uma experiência sólida ainda, tenho uma grande vontade de crescer na área e me aprimorar nas boas práticas do desenvolvimento web — tanto no front-end quanto no back-end. Acredito que com dedicação, consistência e humildade para aprender, posso construir soluções cada vez melhores e mais úteis para o mundo real.</p>
-              </div>
-            </section>
-
-            {/* --- Seção Habilidades --- */}
-            <section id="habilidades" className="mb-12 scroll-mt-20">
-              <h2 className="text-3xl font-bold text-primary mb-6 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-20 after:h-1 after:bg-gradient-to-r from-primary to-secondary">
-                Habilidades
-              </h2>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-                {['HTML5 & CSS3', 'JavaScript (ES6+)', 'React & Node.js', 'SQL & NoSQL', 'Git & GitHub', 'APIs RESTful'].map(skill => (
-                  <Card key={skill} className="hover:transform hover:-translate-y-1 transition-transform duration-300 shadow-md hover:shadow-xl">
-                    <CardContent className="p-4 flex items-center justify-center">
-                      <p className="text-center font-semibold text-primary">{skill}</p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </section>
-
-            {/* --- Seção Projetos --- */}
-            <section id="projetos" className="mb-12 scroll-mt-20">
-               <h2 className="text-3xl font-bold text-primary mb-6 relative pb-2 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-20 after:h-1 after:bg-gradient-to-r from-primary to-secondary">
-                Projetos de Estudo
-              </h2>
-              <div className="grid md:grid-cols-1 gap-6">
-                <Card className="hover:shadow-xl transition-shadow duration-300">
-                  <CardHeader>
-                    <CardTitle className="text-secondary">Página de Perfil Pessoal</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p>Criação desta página de perfil semântica e responsiva, utilizando Next.js, Tailwind CSS e boas práticas para a Atividade 4.</p>
-                    <Button asChild className="mt-4">
-                      <a href="https://github.com/mgbmoura" target="_blank" rel="noopener noreferrer">
-                        <Github className="mr-2 h-4 w-4" /> Ver no GitHub
-                      </a>
-                    </Button>
-                  </CardContent>
-                </Card>
-              </div>
-            </section>
-          </div>
-
-          {/* --- Barra Lateral (ASIDE) --- */}
-          <aside className="lg:w-1/3 lg:sticky top-20 self-start">
-            <Card className="shadow-lg">
-              <CardHeader>
-                <CardTitle className="text-secondary">Redes Sociais</CardTitle>
-              </CardHeader>
-              <CardContent className="flex flex-col space-y-3">
-                <a href="https://www.linkedin.com/in/marcelo-giulian" target="_blank" rel="noopener noreferrer" className="flex items-center text-primary font-semibold hover:underline">
-                  <Linkedin className="mr-2 h-5 w-5" /> LinkedIn
-                </a>
-                <a href="https://github.com/mgbmoura" target="_blank" rel="noopener noreferrer" className="flex items-center text-primary font-semibold hover:underline">
-                  <Github className="mr-2 h-5 w-5" /> GitHub
-                </a>
-                <a href="https://www.instagram.com/mrcl_moura_/" target="_blank" rel="noopener noreferrer" className="flex items-center text-primary font-semibold hover:underline">
-                  <Instagram className="mr-2 h-5 w-5" /> Instagram
-                </a>
-              </CardContent>
-            </Card>
-          </aside>
-        </div>
-      </main>
       
-      {/* ===== Seção Contato ===== */}
-      <section id="contato" className="bg-card w-full scroll-mt-20">
-        <div className="container mx-auto text-center py-12 px-4">
-            <h2 className="text-3xl font-bold text-primary mb-4">Entre em Contato</h2>
-            <p className="text-lg mb-6">Estou disponível para novos desafios e colaborações. Vamos conversar!</p>
-            <Button size="lg" asChild className="rounded-full font-bold bg-secondary hover:bg-primary">
-                <a href="mailto:mrclgln10@gmail.com">mrclgln10@gmail.com</a>
-            </Button>
-        </div>
-      </section>
+      <main className="container mx-auto px-4 py-12 md:py-20 space-y-16 md:space-y-24">
 
-      {/* ===== RODAPÉ (FOOTER) ===== */}
-      <Footer />
-    </div>
-  );
+        {/* Seção Sobre */}
+        <section id="sobre" className="text-center scroll-mt-20">
+          <Image
+            src="/profile.png"
+            alt="Foto de Perfil"
+            width={192}
+            height={192}
+            className="w-48 h-48 mx-auto mb-6 rounded-full shadow-lg md:w-56 md:h-56 object-cover"
+            priority
+          />
+          <h1 className="text-4xl font-bold text-texto-principal mb-2 md:text-5xl">Seu Nome</h1>
+          <p className="text-lg text-texto-principal mb-8 md:text-xl">Desenvolvedor Web Full-Stack</p>
+        </section>
+
+        {/* Seção de Habilidades */}
+        <section id="habilidades" className="scroll-mt-20">
+          <h2 className="text-3xl font-bold text-primaria mb-8 text-center">Minhas Habilidades</h2>
+          <div className="flex flex-wrap justify-center gap-4 max-w-2xl mx-auto">
+            {skills.map((skill) => (
+              <div key={skill} className="bg-card p-4 rounded-lg shadow-md font-medium">
+                {skill}
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Seção de Projetos */}
+        <section id="projetos" className="scroll-mt-20">
+          <h2 className="text-3xl font-bold text-primaria mb-8 text-center">Meus Projetos</h2>
+          <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            {projects.map((project) => (
+              <div key={project.title} className="bg-card p-6 rounded-lg shadow-md flex flex-col">
+                <h3 className="text-xl font-bold mb-2 text-primaria">{project.title}</h3>
+                <p className="text-texto-principal flex-grow mb-4">{project.description}</p>
+                <a href={project.link} target="_blank" rel="noopener noreferrer" className="self-start font-semibold text-primaria hover:underline">
+                  Ver Projeto &rarr;
+                </a>
+              </div>
+            ))}
+          </div>
+        </section>
+        
+        {/* Seção de Contato */}
+        <section id="contato" className="scroll-mt-20">
+          <h2 className="text-3xl font-bold text-primaria mb-8 text-center">Entre em Contato</h2>
+          <div className="bg-card p-8 rounded-lg shadow-md max-w-lg mx-auto">
+            <p className="text-center text-texto-principal mb-6">Estou aberto a novas oportunidades. Sinta-se à vontade para me contatar.</p>
+            <a 
+              href="mailto:seu-email@example.com" 
+              className="block w-full text-center bg-primaria text-primaria-texto font-bold py-3 px-6 rounded-lg transition-transform duration-300 hover:scale-105"
+            >
+              Enviar E-mail
+            </a>
+          </div>
+        </section>
+      </main>
+
+      {/* Rodapé */}
+      <footer className="text-center py-8 mt-12">
+        <p className="text-texto-principal">&copy; {new Date().getFullYear()} Seu Nome. Todos os direitos reservados.</p>
+      </footer>
+    </>
+  )
 }
