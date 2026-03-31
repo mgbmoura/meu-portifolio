@@ -5,10 +5,14 @@
 @layer base {
   :root {
     --fundo: 146, 7%, 14%;
-    --texto-principal: 35, 44%, 88%;
     --card: 157, 6%, 19%;
     --primaria: 17, 89%, 71%;
     --primaria-texto: 146, 7%, 14%;
     --secundaria: 35, 44%, 88%;
+    --texto-principal: 35, 44%, 88%;
+  }
+
+  body {
+    @apply bg-fundo text-texto-principal;
   }
 }

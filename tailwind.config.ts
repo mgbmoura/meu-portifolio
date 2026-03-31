@@ -7,15 +7,13 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {
-      colors: {
-        primaria: "hsl(var(--primaria))",
-        "primaria-texto": "hsl(var(--primaria-texto))",
-        secundaria: "hsl(var(--secundaria))",
-        fundo: "hsl(var(--fundo))",
-        card: "hsl(var(--card))",
-        "texto-principal": "hsl(var(--texto-principal))",
-      },
+    colors: {
+      primaria: "hsl(17 89% 71%)",
+      "primaria-texto": "hsl(146 7% 14%)",
+      secundaria: "hsl(35 44% 88%)",
+      fundo: "hsl(146 7% 14%)",
+      card: "hsl(157 6% 19%)",
+      "texto-principal": "hsl(35 44% 88%)",
     },
   },
   plugins: [],
