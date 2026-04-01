@@ -10,12 +10,12 @@ const config: Config = {
   theme: {
     extend: { // Usar extend para adicionar e não substituir as cores padrão
       colors: {
-        fundo: 'var(--fundo)',
-        card: 'var(--card)',
-        primaria: 'var(--primaria)',
-        'primaria-texto': 'var(--primaria-texto)',
-        secundaria: 'var(--secundaria)',
-        'texto-principal': 'var(--texto-principal)',
+        fundo: 'hsl(var(--fundo))',
+        card: 'hsl(var(--card))',
+        primaria: 'hsl(var(--primaria))',
+        'primaria-texto': 'hsl(var(--primaria-texto))',
+        secundaria: 'hsl(var(--secundaria))',
+        'texto-principal': 'hsl(var(--texto-principal))',
       },
       fontFamily: {
         sans: ['var(--font-geist-sans)'],
