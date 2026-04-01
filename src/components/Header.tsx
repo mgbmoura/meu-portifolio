@@ -6,12 +6,11 @@ export default function Header() {
     <header className="bg-primaria text-primaria-texto shadow-md py-10 px-4 md:px-8 relative">
       <div className="container mx-auto flex flex-col items-center text-center gap-4">
         <Image
-          src="https://picsum.photos/seed/1/128/128"
+          src="/perfil.png"
           alt="Foto de Perfil de Marcelo Giulian"
           width={128}
           height={128}
           className="rounded-full border-4 border-white shadow-lg"
-          data-ai-hint="profile picture"
           priority
         />
         <div>
