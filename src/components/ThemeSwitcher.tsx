@@ -55,7 +55,7 @@ export function ThemeSwitcher() {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 rounded-full transition-colors duration-200 text-primaria hover:bg-primaria/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+      className="p-2 rounded-full transition-colors duration-200 text-primaria-texto hover:bg-primaria/20 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
       aria-label="Toggle theme"
     >
       <SunIcon className="h-6 w-6 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
