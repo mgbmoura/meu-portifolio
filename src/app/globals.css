@@ -4,15 +4,22 @@
 
 @layer base {
   :root {
-    --fundo: 146, 7%, 14%;
-    --card: 157, 6%, 19%;
-    --primaria: 17, 89%, 71%;
-    --primaria-texto: 146, 7%, 14%;
-    --secundaria: 35, 44%, 88%;
-    --texto-principal: 35, 44%, 88%;
+    /* Tema Claro (Padrão) - Paleta Azul */
+    --fundo: 47 18% 90%;
+    --card: 0 0% 100%;
+    --primaria: 217 96% 49%;
+    --primaria-texto: 0 0% 100%;
+    --secundaria: 181 90% 31%;
+    --texto-principal: 200 100% 5%;
   }
 
-  body {
-    @apply bg-fundo text-texto-principal;
+  .dark {
+    /* Tema Escuro - Paleta Laranja */
+    --fundo: 146 7% 14%;
+    --card: 157 6% 19%;
+    --primaria: 17 89% 71%;
+    --primaria-texto: 146 7% 14%;
+    --secundaria: 35 44% 88%;
+    --texto-principal: 35 44% 88%;
   }
 }

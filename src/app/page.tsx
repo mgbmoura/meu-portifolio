@@ -1,10 +1,4 @@
 import Image from 'next/image';
-import type { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: 'Marcelo Giulian - Desenvolvedor',
-  description: 'Portfólio de um desenvolvedor apaixonado por tecnologia.',
-};
 
 export default function HomePage() {
   const skills = [
@@ -26,32 +20,6 @@ export default function HomePage() {
 
   return (
     <>
-      {/* Header */}
-      <header className="bg-primaria text-primaria-texto text-center py-12 px-4">
-        <Image
-          src="/profile.png"
-          alt="Foto de Perfil de Marcelo Giulian"
-          width={150}
-          height={150}
-          className="rounded-full border-4 border-secundaria mx-auto mb-4 shadow-lg"
-          priority
-        />
-        <h1 className="text-4xl md:text-5xl font-bold">Marcelo Giulian</h1>
-        <p className="text-lg opacity-90 mt-1">
-          Desenvolvedor Full-Stack | O que não te desafia, não te transforma
-        </p>
-      </header>
-
-      {/* Navigation */}
-      <nav className="sticky top-0 z-50 bg-card text-texto-principal shadow-md">
-        <ul className="flex justify-center items-center gap-4 sm:gap-10 p-4">
-          <li><a href="#sobre" className="font-semibold hover:text-primaria transition-colors">Sobre</a></li>
-          <li><a href="#habilidades" className="font-semibold hover:text-primaria transition-colors">Habilidades</a></li>
-          <li><a href="#projetos" className="font-semibold hover:text-primaria transition-colors">Projetos</a></li>
-          <li><a href="#contato" className="font-semibold hover:text-primaria transition-colors">Contato</a></li>
-        </ul>
-      </nav>
-
       {/* Main Content */}
       <main className="container mx-auto p-4 md:p-8 flex-grow">
         <div className="flex flex-col lg:flex-row gap-8">
@@ -133,11 +101,6 @@ export default function HomePage() {
           </a>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="text-center p-6">
-        <p className="text-texto-principal">&copy; 2024 Marcelo Giulian. Todos os direitos reservados.</p>
-      </footer>
     </>
   );
 }
